@@ -449,63 +449,72 @@ int enlarge_test(){
 
 }
 
+// --- AGRUPACIÓN DE PRUEBAS (SUITES) ---
+
+int test_create() {
+    return createMap_test1() && createMap_test2() && createMap_test3();
+}
+
+int test_insert_1() {
+    return insert_test1() && insert_test2();
+}
+
+int test_insert_2() {
+    return insert_test3() && insert_test4();
+}
+
+int test_search() {
+    return search_test1() && search_test2() && search_test3();
+}
+
+int test_erase() {
+    return erase_test1() && erase_test2() && erase_test3();
+}
+
+int test_first_next() {
+    return first_test() && next_test();
+}
+
+int test_enlarge() {
+    return enlarge_test();
+}
+
+
+int test_suite(int(*test)(), char* msg, int max_score, int id, int req_id){
+    if(test_id==-1 || test_id==id){
+        printf("\n%s\n", msg);
+        int score=test();
+
+        if(id==req_id && score == max_score) success();
+
+        printf("   partial_score: %d/%d\n", score, max_score); 
+        
+        return score;
+    }
+    return 0;
+}
+
+// --- MAIN NUEVO ---
 
 int main( int argc, char *argv[] ) {
-
-    int total_score=0;
-    int partial_score=0;
     
     if(argc>1) test_id=atoi(argv[1]);
+    srand(time(NULL));
 
-    printf("\ncreate map tests:\n");  partial_score=0;
-    int res = 
-    createMap_test1()&&
-    createMap_test2()&&
-    createMap_test3()&&
-    (partial_score+=10) && (test_id!=1 || success());
-    total_score+=partial_score;
+    int total_score=0;
     
-    printf("\ninsert tests:\n");  partial_score=0;
-    res=insert_test1()&&
-    insert_test2()&&
-    (partial_score+=10) && (test_id!=2 || success()) &&
-    insert_test3()&&
-    insert_test4()&&
-    (partial_score+=10) && (test_id!=3 || success());
-    total_score+=partial_score;
+    // Evaluamos las funciones agrupadas para HashMap basándonos en tu nuevo formato
+    // Se reparten los 70 puntos totales originales en las 7 funciones.
+    total_score+=test_suite(test_create,     "Test Create Map...",    5, 1, test_id);
+    total_score+=test_suite(test_insert_1,   "Test Insert Part 1...", 5, 2, test_id);
+    total_score+=test_suite(test_insert_2,   "Test Insert Part 2...", 10, 3, test_id);
+    total_score+=test_suite(test_search,     "Test Search Map...",    10, 4, test_id);
+    total_score+=test_suite(test_erase,      "Test Erase Map...",     10, 5, test_id);
+    total_score+=test_suite(test_first_next, "Test First y Next...",  10, 6, test_id);
+    total_score+=test_suite(test_enlarge,    "Test Enlarge...",       10, 7, test_id);
     
-
-    printf("\nsearch tests:\n");  partial_score=0;
-    res=search_test1()&&
-    search_test2()&&
-    search_test3()&&
-    (partial_score+=10) && (test_id!=4 || success());
-    total_score+=partial_score;
-
-
-    printf("\nerase tests:\n");  partial_score=0;
-    res=erase_test1()&&
-    erase_test2()&&
-    erase_test3()&&
-    (partial_score+=10) && (test_id!=5 || success());
-    total_score+=partial_score;
-
-    printf("\nfirst-next tests:\n");  partial_score=0;
-    res=first_test()&&
-    next_test()&&
-    (partial_score+=10) && (test_id!=6 || success());
-    total_score+=partial_score;
-   
-
-    printf("\nenlarge tests:\n");  partial_score=0;
-    res=enlarge_test()&&
-    (partial_score+=10) && (test_id!=7 || success());
-    total_score+=partial_score;
-
-    if(res>1) printf("%d\n",res); //nothing
-
     if(argc==1)
-      printf("\ntotal_score: %d/70\n", total_score);
+      printf("\ntotal_score: %d/60\n", total_score);
 
     return 0;
 }
