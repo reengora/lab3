@@ -10,3 +10,15 @@ Fri Apr 17 06:39:03 PM UTC 2026:
  tests:  0|7
 total_score: 0/60
 154ea9b
+Fri Apr 17 07:01:36 PM UTC 2026: 
+ hashmap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:73:19: error: invalid operands to binary % (have ‘char *’ and ‘long int’)
+   73 |     int pos = key % map->size;
+      |                   ^ ~~~~~~~~~
+      |                        |
+      |                        long int
+1c5a1fd
