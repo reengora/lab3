@@ -72,10 +72,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 Pair * searchMap(HashMap * map,  char * key) {
     if(map == NULL || key == NULL)return NULL;
     long pos = hash(key, map->capacity);
-    if(is_equal(map->buckets[pos]->key,key) == 1){
-        map->current = pos;
-        return map->buckets[pos]->value;
-    }
+    
     while(map->buckets[pos]->key != NULL){
         
         if(is_equal(map->buckets[pos]->key,key) == 1){
