@@ -178,11 +178,11 @@ Pair * nextMap(HashMap * map) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     HashMap*  nuevo = createMap(2*map->capacity);
-    Pair* par = firstMap(map);
+    Pair** par = firstMap(map);
 
     for(long i=0; i > map->size; i++){
         insertMap(nuevo,par->key,par->value);
-        par = nextMap;
+        par = nextMap(map);
     }
 
     return;
