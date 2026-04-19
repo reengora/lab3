@@ -449,3 +449,15 @@ Sun Apr 19 09:03:14 PM UTC 2026:
  tests:  16|1
 total_score: 50/60
 c997f11
+Sun Apr 19 09:13:47 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:154:8: error: ‘pos’ undeclared (first use in this function); did you mean ‘pow’?
+  154 |     if(pos == map->capacity-1)return NULL;
+      |        ^~~
+      |        pow
+hashmap.c:154:8: note: each undeclared identifier is reported only once for each function it appears in
+37e0e92
