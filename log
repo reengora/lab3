@@ -319,3 +319,9 @@ hashmap.c:181:23: error: initialization of ‘HashMap *’ {aka ‘struct HashMa
   181 |     HashMap*  nuevo = (HashMap**)calloc(2*map->capacity,sizeof(HashMap));
       |                       ^
 c8a37a7
+Sun Apr 19 08:00:31 PM UTC 2026: 
+ hashmap.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+ tests:  12|2
+total_score: 40/60
+4bba1ec
