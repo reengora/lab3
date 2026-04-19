@@ -177,8 +177,19 @@ Pair * nextMap(HashMap * map) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    HashMap** aux = map->buckets;
+    HashMap*  nuevo = calloc(2*sizeof(HashMap));
+    nuevo->size = 0;
+    nuevo->capacity = 2*map->capacity;
+    nuevo->current = -1;
+    mapa->buckets = (Pair**)calloc(nuevo->capacity,sizeof(Pair*));
 
+    for(long i=0; i > map->size; i++){
+        insertMap(nuevo,map->buckets[i]->key,map->buckets[i]->value);
+        
+    }
 
+    return;
 }
 
 

@@ -225,3 +225,29 @@ Sun Apr 19 06:08:42 PM UTC 2026:
  tests:  12|2
 total_score: 40/60
 e60d0fd
+Sun Apr 19 07:49:35 PM UTC 2026: 
+ hashmap.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:180:21: error: initialization of ‘HashMap **’ {aka ‘struct HashMap **’} from incompatible pointer type ‘Pair **’ [-Wincompatible-pointer-types]
+  180 |     HashMap** aux = map->buckets;
+      |                     ^~~
+hashmap.c:181:23: error: too few arguments to function ‘calloc’
+  181 |     HashMap*  nuevo = calloc(2*sizeof(HashMap));
+      |                       ^~~~~~
+In file included from test.c:2:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdlib.h:675:14: note: declared here
+  675 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+hashmap.c:185:5: error: ‘mapa’ undeclared (first use in this function); did you mean ‘map’?
+  185 |     mapa->buckets = (Pair**)calloc(nuevo->capacity,sizeof(Pair*));
+      |     ^~~~
+      |     map
+hashmap.c:185:5: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:180:15: error: unused variable ‘aux’ [-Werror=unused-variable]
+  180 |     HashMap** aux = map->buckets;
+      |               ^~~
+cc1: all warnings being treated as errors
+20ca4b0
