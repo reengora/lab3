@@ -140,7 +140,7 @@ Pair * firstMap(HashMap * map) {
 
     long pos = 0;
     long aux = pos;
-    while(map->buckets[pos]== NULL)
+    while(map->buckets[pos]== NULL || map->buckets[pos]->key == NULL)
         {
             pos = (pos +1)% map->capacity;
             if(pos == aux)return NULL;
@@ -154,7 +154,7 @@ Pair * nextMap(HashMap * map) {
 
     long pos = (map->current+1)%map->capacity;
     long aux = pos;
-    while(map->buckets[pos]== NULL)
+    while(map->buckets[pos]== NULL || map->buckets[pos]->key == NULL)
         {
             pos = (pos +1)% map->capacity;
             if(pos == aux)return NULL;
