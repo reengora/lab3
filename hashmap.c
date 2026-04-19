@@ -151,10 +151,10 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     if(map ==  NULL)return NULL;
-    if(pos == map->capacity-1)return NULL;
 
     long pos = (map->current+1)%map->capacity;
     long aux = pos;
+    if(pos == map->capacity-1)return NULL;
     while(map->buckets[pos]== NULL || map->buckets[pos]->key == NULL)
         {
             pos = (pos +1)% map->capacity;

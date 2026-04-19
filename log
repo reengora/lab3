@@ -461,3 +461,9 @@ hashmap.c:154:8: error: ‘pos’ undeclared (first use in this function); did y
       |        pow
 hashmap.c:154:8: note: each undeclared identifier is reported only once for each function it appears in
 37e0e92
+Sun Apr 19 09:14:11 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|0
+total_score: 60/60
+4e951ea
