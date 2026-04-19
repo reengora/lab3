@@ -144,6 +144,7 @@ Pair * firstMap(HashMap * map) {
             pos = (pos +1)% map->capacity;
             if(pos == aux)return NULL;
         }
+    map->current = pos;
     return map->buckets[pos];
 }
 
