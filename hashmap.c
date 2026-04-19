@@ -182,7 +182,7 @@ void enlarge(HashMap * map) {
     long largo = map->size;
     
     map->capacity = map->capacity * 2;
-    map->buckets = (Pair**)calloc(map->capacity,sizeof(Pair*))
+    map->buckets = (Pair**)calloc(map->capacity,sizeof(Pair*));
     map->size = 0;
     map->current = -1;
     
