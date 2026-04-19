@@ -71,11 +71,11 @@ void insertMap(HashMap * map, char * key, void * value) {
     while(map->buckets[pos] != NULL){
         if(map->buckets[pos]->key == NULL)break;
         pos = (pos +1)% map->capacity;
-        if(pos = aux)return;
+        if(pos == aux)return;
     }
-    Pair* par = creatPair(key,value);
+    Pair* par = createPair(key,value);
     map->buckets[pos] = par;
-    size++;
+    map->size++;
     map->current = pos;
     
     return;
