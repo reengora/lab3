@@ -177,12 +177,21 @@ Pair * nextMap(HashMap * map) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-    HashMap*  nuevo = createMap(2*map->capacity);
-    Pair* par = firstMap(&map);
-
-    for(long i=0; i > map->size; i++){
-        insertMap(nuevo,par->key,par->value);
-        par = nextMap(map);
+    if(map == NULL)return;
+    Pair** pares = map->buckets;
+    long largo = map->size;
+    
+    map->capacity = map->capacity * 2;
+    map->buckets = (Pair**)calloc(map->capacity,sizeof(Pair*))
+    map->size = 0;
+    map->current = -1;
+    
+    for(long i = 0; i < largo; i++){
+        if(pares[i]->key != NULL){
+            insertMap(map,pares[i]->key,pares[i]->value);
+        }
+        
+        
     }
 
     return;

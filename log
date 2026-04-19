@@ -398,3 +398,16 @@ hashmap.c:138:27: note: expected ‘HashMap *’ {aka ‘struct HashMap *’} bu
   138 | Pair * firstMap(HashMap * map) {
       |                 ~~~~~~~~~~^~~
 9d0735f
+Sun Apr 19 08:24:40 PM UTC 2026: 
+ hashmap.c | 19 ++++++++++++++-----
+ 1 file changed, 14 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:185:63: error: expected ‘;’ before ‘map’
+  185 |     map->buckets = (Pair**)calloc(map->capacity,sizeof(Pair*))
+      |                                                               ^
+      |                                                               ;
+  186 |     map->size = 0;
+      |     ~~~                                                        
+a0848f8
