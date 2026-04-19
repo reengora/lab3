@@ -309,3 +309,13 @@ hashmap.c:181:23: error: initialization of ‘HashMap *’ {aka ‘struct HashMa
   181 |     HashMap*  nuevo = (Pair**)calloc(2*map->capacity,sizeof(HashMap));
       |                       ^
 2eab84b
+Sun Apr 19 07:58:16 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:181:23: error: initialization of ‘HashMap *’ {aka ‘struct HashMap *’} from incompatible pointer type ‘HashMap **’ {aka ‘struct HashMap **’} [-Wincompatible-pointer-types]
+  181 |     HashMap*  nuevo = (HashMap**)calloc(2*map->capacity,sizeof(HashMap));
+      |                       ^
+c8a37a7
