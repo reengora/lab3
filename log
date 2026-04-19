@@ -325,3 +325,24 @@ Sun Apr 19 08:00:31 PM UTC 2026:
  tests:  12|2
 total_score: 40/60
 4bba1ec
+Sun Apr 19 08:02:35 PM UTC 2026: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:181:18: error: initialization of ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+  181 |     Pair** par = firstMap(map);
+      |                  ^~~~~~~~
+hashmap.c:184:28: error: ‘par’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  184 |         insertMap(nuevo,par->key,par->value);
+      |                            ^~
+      |                         (* )
+hashmap.c:184:37: error: ‘par’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  184 |         insertMap(nuevo,par->key,par->value);
+      |                                     ^~
+      |                                  (* )
+hashmap.c:185:13: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair * (*)(HashMap *)’ {aka ‘Pair * (*)(struct HashMap *)’} [-Wincompatible-pointer-types]
+  185 |         par = nextMap;
+      |             ^
+7ad8327
