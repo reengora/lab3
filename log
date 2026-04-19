@@ -377,3 +377,9 @@ hashmap.c:185:13: error: assignment to ‘Pair **’ from incompatible pointer t
   185 |         par = nextMap(map);
       |             ^
 280e942
+Sun Apr 19 08:06:30 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|2
+total_score: 40/60
+42bba10
