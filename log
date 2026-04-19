@@ -209,3 +209,13 @@ Sun Apr 19 05:59:44 PM UTC 2026:
  tests:  12|2
 total_score: 40/60
 10d2a53
+Sun Apr 19 06:08:20 PM UTC 2026: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:73:37: error: invalid type argument of ‘->’ (have ‘long int’)
+   73 |         if(is_equal(map->buckets[pos->key],key))return;
+      |                                     ^~
+96af4e4

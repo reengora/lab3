@@ -49,7 +49,7 @@ HashMap * createMap(long capacity) {
     mapa->capacity = capacity;
     mapa->size = 0;
     mapa->current = -1;
-    mapa->buckets = (Pair**)calloc(capacity,sizeof(Pair));
+    mapa->buckets = (Pair**)calloc(capacity,sizeof(Pair*));
     if(mapa != NULL)return mapa;
 
     return NULL;
@@ -70,6 +70,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     long aux = pos;
     while(map->buckets[pos] != NULL){
         if(map->buckets[pos]->key == NULL)break;
+        if(is_equal(map->buckets[pos->key],key))return;
         pos = (pos +1)% map->capacity;
         if(pos == aux)return;
     }
