@@ -187,7 +187,7 @@ void enlarge(HashMap * map) {
     map->current = -1;
     
     for(long i = 0; i < largo; i++){
-        if(pares[i]->key != NULL){
+        if(pares[i] != NULL && pares[i]->key != NULL  ){
             insertMap(map,pares[i]->key,pares[i]->value);
         }
         
