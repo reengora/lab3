@@ -179,7 +179,7 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     if(map == NULL)return;
     Pair** pares = map->buckets;
-    long largo = map->size;
+    long largo = map->capacity;
     
     map->capacity = map->capacity * 2;
     map->buckets = (Pair**)calloc(map->capacity,sizeof(Pair*));
