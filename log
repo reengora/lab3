@@ -219,3 +219,9 @@ hashmap.c:73:37: error: invalid type argument of ‘->’ (have ‘long int’)
    73 |         if(is_equal(map->buckets[pos->key],key))return;
       |                                     ^~
 96af4e4
+Sun Apr 19 06:08:42 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|2
+total_score: 40/60
+e60d0fd
