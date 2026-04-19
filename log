@@ -281,3 +281,21 @@ hashmap.c:188:49: error: ‘aux’ is a pointer to pointer; did you mean to dere
       |                                                 ^~
       |                                              (* )
 82ac1cf
+Sun Apr 19 07:56:14 PM UTC 2026: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:181:23: error: initialization of ‘HashMap *’ {aka ‘struct HashMap *’} from incompatible pointer type ‘Pair **’ [-Wincompatible-pointer-types]
+  181 |     HashMap*  nuevo = (Pair**)calloc(2*map->capacity,sizeof(HashMap));
+      |                       ^
+hashmap.c:188:28: error: ‘aux’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  188 |         insertMap(nuevo,aux->buckets[i]->key,aux->buckets[i]->value);
+      |                            ^~
+      |                         (* )
+hashmap.c:188:49: error: ‘aux’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  188 |         insertMap(nuevo,aux->buckets[i]->key,aux->buckets[i]->value);
+      |                                                 ^~
+      |                                              (* )
+121213f
