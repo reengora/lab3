@@ -153,3 +153,23 @@ Sun Apr 19 05:18:49 PM UTC 2026:
  tests:  4|5
 total_score: 15/60
 b94b17c
+Sun Apr 19 05:40:49 PM UTC 2026: 
+ hashmap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:74:12: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   74 |         if(pos = aux)return;
+      |            ^~~
+hashmap.c:76:17: error: implicit declaration of function ‘creatPair’; did you mean ‘createPair’? [-Wimplicit-function-declaration]
+   76 |     Pair* par = creatPair(key,value);
+      |                 ^~~~~~~~~
+      |                 createPair
+hashmap.c:76:17: error: initialization of ‘Pair *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+hashmap.c:78:5: error: ‘size’ undeclared (first use in this function)
+   78 |     size++;
+      |     ^~~~
+hashmap.c:78:5: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+fb0462e
