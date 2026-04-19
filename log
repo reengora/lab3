@@ -346,3 +346,13 @@ hashmap.c:185:13: error: assignment to ‘Pair **’ from incompatible pointer t
   185 |         par = nextMap;
       |             ^
 7ad8327
+Sun Apr 19 08:02:57 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:185:13: error: assignment to ‘Pair *’ from incompatible pointer type ‘Pair * (*)(HashMap *)’ {aka ‘Pair * (*)(struct HashMap *)’} [-Wincompatible-pointer-types]
+  185 |         par = nextMap;
+      |             ^
+4a5ba1d
