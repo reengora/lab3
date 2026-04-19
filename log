@@ -383,3 +383,18 @@ Sun Apr 19 08:06:30 PM UTC 2026:
  tests:  12|2
 total_score: 40/60
 42bba10
+Sun Apr 19 08:08:38 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:181:26: error: passing argument 1 of ‘firstMap’ from incompatible pointer type [-Wincompatible-pointer-types]
+  181 |     Pair* par = firstMap(&map);
+      |                          ^~~~
+      |                          |
+      |                          HashMap ** {aka struct HashMap **}
+hashmap.c:138:27: note: expected ‘HashMap *’ {aka ‘struct HashMap *’} but argument is of type ‘HashMap **’ {aka ‘struct HashMap **’}
+  138 | Pair * firstMap(HashMap * map) {
+      |                 ~~~~~~~~~~^~~
+9d0735f
