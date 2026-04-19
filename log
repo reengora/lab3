@@ -122,3 +122,16 @@ Fri Apr 17 07:22:14 PM UTC 2026:
  tests:  3|6
 total_score: 10/60
 3898346
+Sun Apr 19 05:11:04 PM UTC 2026: 
+ hashmap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:50:19: error: assignment to ‘Pair **’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+   50 |     mapa->buckets = -1;
+      |                   ^
+hashmap.c:52:19: error: assignment to ‘long int’ from ‘void *’ makes integer from pointer without a cast [-Wint-conversion]
+   52 |     mapa->current = NULL;
+      |                   ^
+3bcd85e
